@@ -1,0 +1,19 @@
+# tasks.py
+import datetime
+import json
+
+def count_wednesdays(file_path, output_path):
+    with open(file_path, 'r') as file:
+        dates = file.readlines()
+    wednesdays = [date.strip() for date in dates if datetime.datetime.strptime(date.strip(), "%Y-%m-%d").weekday() == 2]
+    with open(output_path, 'w') as file:
+        file.write(str(len(wednesdays)))
+
+def sort_contacts(file_path, output_path):
+    with open(file_path, 'r') as file:
+        contacts = json.load(file)
+    contacts_sorted = sorted(contacts, key=lambda x: (x['last_name'], x['first_name']))
+    with open(output_path, 'w') as file:
+        json.dump(contacts_sorted, file, indent=4)
+
+# Add more task-specific functions here...
