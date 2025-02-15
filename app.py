@@ -13,7 +13,8 @@ load_dotenv()
 
 app = FastAPI()
 
-AIPROXY_TOKEN = os.getenv("AIPROXY_TOKEN")
+AIPROXY_TOKEN = os.getenv("eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IjIzZjEwMDAzOTVAZHMuc3R1ZHkuaWl0bS5hYy5pbiJ9.Y9pK_iw4L4uLHYcYbjOA9WWmPj1LDLBI4S3azoFD4XM
+")
 
 # Function to interact with the LLM
 def ask_llm(prompt: str) -> str:
